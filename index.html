@@ -3,42 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
     <title>Calculadora de Jorge - Math Studio</title>
-    <meta name="description" content="Calculadora web Math Studio creada por Jorge Isaac.">
-    
+    <meta name="description" content="Calculadora inteligente de Jorge que recuerda tus resultados.">
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <h1 style="display:none;">Calculadora de Jorge</h1>
-
     <div class="glass-card">
         <div class="header">
             <img src="imagen_calc.jpg" alt="Logo" class="logo">
             <h1>Math Studio</h1>
         </div>
+
         <div class="input-group">
-            <span class="input-label">Número</span>
-            <input type="number" id="n1" inputmode="decimal" placeholder="0">
+            <input type="number" id="n1" inputmode="decimal" placeholder="Número 1">
+            
             <div class="operation-selector">
                 <button type="button" class="op-btn active" onclick="setOp(this, '+')">+</button>
                 <button type="button" class="op-btn" onclick="setOp(this, '-')">−</button>
                 <button type="button" class="op-btn" onclick="setOp(this, '*')">×</button>
                 <button type="button" class="op-btn" onclick="setOp(this, '/')">÷</button>
-                <button type="button" class="op-btn" onclick="setOp(this, '^')">^</button>
-                <button type="button" class="op-btn" onclick="setOp(this, '√')">√</button>
-                <button type="button" class="op-btn" onclick="setOp(this, '%')">%</button>
             </div>
             <input type="hidden" id="operacion" value="+">
-            <span class="input-label">Número</span>
-            <input type="number" id="n2" inputmode="decimal" placeholder="0">
+
+            <input type="number" id="n2" inputmode="decimal" placeholder="Número 2">
         </div>
+
         <div class="button-container">
-            <button id="btn-calcular" onclick="calcular()">Calcular</button>
-            <button id="btn-limpiar" onclick="limpiar()">Limpiar</button>
+            <button onclick="calcular()">Calcular</button>
+            <button onclick="limpiar()">Limpiar</button>
         </div>
+
         <div id="resultado-container">
-            <span class="label">RESULTADO</span>
+            <span class="label">RESULTADO GUARDADO</span>
             <div id="display-resultado">0</div>
         </div>
     </div>
