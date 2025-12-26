@@ -5,24 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <title>Calculadora de Jorge - Math Studio</title>
-    <meta name="description" content="Calculadora web Math Studio de Jorge Isaac. Suma, resta, multiplica y más desde cualquier celular.">
-    <meta name="keywords" content="Calculadora de Jorge, Math Studio, calculadora online, Jorge Isaac">
+    <meta name="description" content="Calculadora web Math Studio creada por Jorge Isaac.">
     
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <h1 style="display:none;">Calculadora de Jorge - Math Studio</h1>
+    <h1 style="display:none;">Calculadora de Jorge</h1>
 
     <div class="glass-card">
         <div class="header">
             <img src="imagen_calc.jpg" alt="Logo" class="logo">
             <h1>Math Studio</h1>
         </div>
-
         <div class="input-group">
-            <span id="label-n1" class="input-label">Número</span>
+            <span class="input-label">Número</span>
             <input type="number" id="n1" inputmode="decimal" placeholder="0">
-            
             <div class="operation-selector">
                 <button type="button" class="op-btn active" onclick="setOp(this, '+')">+</button>
                 <button type="button" class="op-btn" onclick="setOp(this, '-')">−</button>
@@ -33,22 +30,18 @@
                 <button type="button" class="op-btn" onclick="setOp(this, '%')">%</button>
             </div>
             <input type="hidden" id="operacion" value="+">
-
-            <span id="label-n2" class="input-label">Número</span>
+            <span class="input-label">Número</span>
             <input type="number" id="n2" inputmode="decimal" placeholder="0">
         </div>
-
         <div class="button-container">
             <button id="btn-calcular" onclick="calcular()">Calcular</button>
             <button id="btn-limpiar" onclick="limpiar()">Limpiar</button>
         </div>
-
         <div id="resultado-container">
             <span class="label">RESULTADO</span>
             <div id="display-resultado">0</div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
