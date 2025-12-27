@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Calculadora - Math Studio</title>
+    <title>Math Studio - Índice Personalizado</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
@@ -24,8 +24,13 @@
                 <button type="button" class="op-btn" onclick="setOp(this, '√')">√</button>
                 <button type="button" class="op-btn" onclick="setOp(this, '%')">%</button>
             </div>
-            <input type="hidden" id="operacion" value="+">
+            
+            <div class="indice-selector">
+                <label for="user-indice">Índice:</label>
+                <input type="text" id="user-indice" value="2" oninput="actualizarIndice()" placeholder="Ej: 2">
+            </div>
 
+            <input type="hidden" id="operacion" value="+">
             <input type="number" id="n2" inputmode="decimal" placeholder="Número 2">
         </div>
 
@@ -35,8 +40,11 @@
         </div>
 
         <div id="resultado-container">
-            <span class="label">ÚLTIMO RESULTADO</span>
-            <div id="display-resultado">0</div>
+            <span class="label">RESULTADO GUARDADO</span>
+            <div class="display-flex">
+                <div id="display-resultado">0</div>
+                <span id="indice-dinamico" class="indice">2</span>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>

@@ -1,3 +1,8 @@
+function actualizarIndice() {
+    const valor = document.getElementById('user-indice').value;
+    document.getElementById('indice-dinamico').innerText = valor;
+}
+
 function calcular() {
     const n1 = parseFloat(document.getElementById('n1').value);
     const n2 = parseFloat(document.getElementById('n2').value);
@@ -30,20 +35,17 @@ function setOp(btn, op) {
     document.getElementById('operacion').value = op;
     document.querySelectorAll('.op-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-
-    // Desactivar n2 si es raíz cuadrada
+    
     const n2 = document.getElementById('n2');
-    if (op === '√') {
-        n2.style.display = "none";
-    } else {
-        n2.style.display = "block";
-    }
+    n2.style.display = (op === '√') ? "none" : "block";
 }
 
 function limpiar() {
     document.getElementById('n1').value = "";
     document.getElementById('n2').value = "";
     document.getElementById('display-resultado').innerText = "0";
+    document.getElementById('user-indice').value = "2";
+    actualizarIndice();
     localStorage.removeItem('ultimoResultado');
 }
 
