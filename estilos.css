@@ -8,40 +8,38 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Evita el rebote en iOS */
-    position: fixed;
-    width: 100%;
+    overflow: hidden;
 }
 
 .glass-card {
     background: rgba(255, 255, 255, 0.98);
-    padding: 20px;
+    padding: 25px;
     border-radius: 25px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     text-align: center;
     width: 90%;
     max-width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de flotación al tocar en móvil */
+.glass-card:active {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
 }
 
 .logo {
     width: 60px;
+    height: 60px;
+    object-fit: cover;
     border-radius: 12px;
     margin-bottom: 5px;
 }
 
 .header h1 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin: 5px 0 15px;
     color: #333;
-}
-
-.input-label {
-    font-size: 10px;
-    font-weight: 600;
-    color: #667eea;
-    display: block;
-    text-align: left;
-    margin: 5px 5px -2px;
 }
 
 input {
@@ -50,25 +48,26 @@ input {
     padding: 15px;
     border: 2px solid #f1f5f9;
     border-radius: 12px;
-    font-size: 20px; /* Evita el auto-zoom en iPhone */
+    font-size: 20px;
     text-align: center;
     background: #f8fafc;
+    margin-bottom: 10px;
 }
 
 .operation-selector {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 4px;
+    gap: 8px;
     background: #f1f5f9;
-    padding: 6px;
+    padding: 8px;
     border-radius: 15px;
-    margin: 10px 0;
+    margin-bottom: 15px;
 }
 
 .op-btn {
-    flex: 1 1 40px;
-    min-height: 44px; /* Tamaño táctil recomendado */
+    flex: 1 1 45px;
+    height: 45px;
     border: none;
     background: transparent;
     cursor: pointer;
@@ -82,13 +81,13 @@ input {
 .op-btn.active {
     background: white;
     color: #667eea;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .button-container {
     display: flex;
     gap: 10px;
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 #btn-calcular {
@@ -96,30 +95,41 @@ input {
     background: #667eea;
     color: white;
     border: none;
-    height: 50px;
+    height: 55px;
     border-radius: 12px;
     font-weight: 600;
-    font-size: 16px;
+    transition: 0.2s;
 }
 
 #btn-limpiar {
     flex: 1;
     background: #edf2f7;
     border: none;
-    height: 50px;
+    height: 55px;
     border-radius: 12px;
     color: #718096;
+}
+
+#btn-calcular:active, #btn-limpiar:active {
+    transform: scale(0.95);
 }
 
 #resultado-container {
     margin-top: 20px;
     background: #f1f5f9;
-    padding: 12px;
+    padding: 15px;
     border-radius: 15px;
 }
 
 #display-resultado {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
     color: #2d3748;
 }
+
+.label {
+    font-size: 10px;
+    color: #a0aec0;
+    letter-spacing: 1px;
+}
+
